@@ -71,7 +71,6 @@ public class ContactList implements Serializable {
         } else {
             for (int i = 0; i < contactListLength; i++) {
                 System.out.print("-------- * -------- * -------- * --------");
-                //System.out.print("Contact No. " + (i + 1));
                 System.out.println(tempNode);
                 tempNode = tempNode.getNext();
                 System.out.println("-------- * -------- * -------- * --------");
@@ -79,6 +78,29 @@ public class ContactList implements Serializable {
 
         }
         System.out.println();
+    }
+
+    public void searchByFirstName(String firstName) {
+        Person current = head;
+        boolean empty = true;
+        if (isEmpty()) {
+            System.out.println("***************************************\n|    OPPss!!  The list is empty!      |\n***************************************\n");
+        } else {
+            for (int i = 0; i < contactListLength; i++) {
+                if (current.getFirstName().toLowerCase().contains(firstName.toLowerCase())) {
+                    System.out.println((i + 1) + " match found!");
+                    System.out.print("-------- * -------- * -------- * --------");
+                    System.out.println(current);
+                    System.out.println("-------- * -------- * -------- * --------");
+                    empty = false;
+                }
+                current = current.getNext();
+            }
+            if (empty) {
+                System.out.println("NO RESULTS FOUND!");
+            }
+        }
+
     }
 }
 
