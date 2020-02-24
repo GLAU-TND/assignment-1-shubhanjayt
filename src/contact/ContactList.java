@@ -57,7 +57,7 @@ public class ContactList implements Serializable {
                 }
             }
         }
-            }
+    }
 
 
     public boolean isEmpty() {
