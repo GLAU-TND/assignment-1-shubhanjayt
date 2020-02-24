@@ -17,5 +17,12 @@ public class ContactList implements Serializable {
         Person current = head;
         Person previous = null;
         Person newNode = new Person();
+
+        newNode.setFirstName(firstName);
+        newNode.setLastName(lastName);
+        newNode.setContactNumber(contactNumber);
+        newNode.setAnotherContactNumber(anotherContactNumber);
+        newNode.setE_mailAddress(emailAddress);
+
     }
 }
