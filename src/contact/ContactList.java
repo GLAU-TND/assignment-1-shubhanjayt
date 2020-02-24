@@ -102,6 +102,15 @@ public class ContactList implements Serializable {
         }
 
     }
+
+    public void displayContactsName() {
+        Person current = head;
+        System.out.println("Here are all your contacts:");
+        for (int i = 0; i < contactListLength; i++) {
+            System.out.println((i + 1) + ". " + current.getFirstName() + " " + current.getLastName());
+            current = current.getNext();
+        }
+    }
 }
 
 
