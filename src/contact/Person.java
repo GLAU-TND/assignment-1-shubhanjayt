@@ -63,4 +63,16 @@ public class Person implements Serializable {
     public void setNext(Person next) {
         this.next = next;
     }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", contactNumber='" + contactNumber + '\'' +
+                ", anotherContactNumber='" + anotherContactNumber + '\'' +
+                ", e_mailAddress='" + e_mailAddress + '\'' +
+                ", next=" + next +
+                '}';
+    }
 }
