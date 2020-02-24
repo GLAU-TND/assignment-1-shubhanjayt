@@ -111,6 +111,46 @@ public class ContactList implements Serializable {
             current = current.getNext();
         }
     }
+
+    public void deleteFromContactsList(int index) {
+        Person current = head;
+        Person previous = null;
+        boolean empty = true;
+        if (isEmpty()) {
+            System.out.println("***************************************\n|    OPPss!!  The list is empty!      |\n***************************************\n");
+        } else {
+            for (int i = 0; i < contactListLength; i++) {
+                if ((index - 1) == i) {
+                    if (previous == null) {
+                        head = head.getNext();
+                        contactListLength--;
+                        empty = false;
+                        break;
+                    } else if (current.getNext() == null) {
+                        previous.setNext(null);
+                        contactListLength--;
+                        empty = false;
+                        break;
+                    } else {
+                        previous.setNext(current.getNext());
+                        contactListLength--;
+                        empty = false;
+                        break;
+                    }
+                } else {
+                    previous = current;
+                    current = current.getNext();
+                }
+            }
+            if (empty) {
+                System.out.println("Contact Not Found");
+            } else {
+                System.out.println(current.getFirstName() + " " + current.getLastName() + "'s contact deleted from list!");
+            }
+        }
+    }
 }
+
+
 
 
