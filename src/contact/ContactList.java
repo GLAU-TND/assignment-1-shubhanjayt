@@ -11,4 +11,6 @@ public class ContactList implements Serializable {
         head = null;
         contactListLength = 0;
     }
+
+
 }
