@@ -64,6 +64,22 @@ public class ContactList implements Serializable {
         return (contactListLength == 0);
     }
 
+    public void printContactsList() {
+        Person tempNode = head;
+        if (head == null) {
+            System.out.println("***************************************\n|    OPPss!!  The list is empty!      |\n***************************************\n");
+        } else {
+            for (int i = 0; i < contactListLength; i++) {
+                System.out.print("-------- * -------- * -------- * --------");
+                //System.out.print("Contact No. " + (i + 1));
+                System.out.println(tempNode);
+                tempNode = tempNode.getNext();
+                System.out.println("-------- * -------- * -------- * --------");
+            }
+
+        }
+        System.out.println();
+    }
 }
 
 
