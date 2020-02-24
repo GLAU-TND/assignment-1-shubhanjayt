@@ -29,17 +29,36 @@ public class ContactList implements Serializable {
             contactListLength++;
         } else {
 
-            /*
-             compare firstName of entries for priority by first letter in firstName
-             */
             for (int i = 0; i < contactListLength; i++) {
                 String[] ourNames1 = current.getFirstName().split(" ");
                 String[] ourNames2 = newNode.getFirstName().split(" ");
 
                 int result = ourNames1[ourNames1.length - 1].compareToIgnoreCase(ourNames2[ourNames2.length - 1]);
+                if (result > 0) {
+                    if (previous == null) {
+                        newNode.setNext(current);
+                        head = newNode;
+                        contactListLength++;
+                        break;
+                    }
+                    previous.setNext(newNode);
+                    newNode.setNext(current);
+                    contactListLength++;
+                    break;
+                } else {
+                    if (current.getNext() == null) {
+                        current.setNext(newNode);
+                        newNode.setNext(null);
+                        contactListLength++;
+                        break;
+                    }
+                    previous = current;
+                    current = current.getNext();
+                }
             }
         }
-    }
+            }
+
 
     public boolean isEmpty() {
         return (contactListLength == 0);
