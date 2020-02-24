@@ -12,5 +12,10 @@ public class ContactList implements Serializable {
         contactListLength = 0;
     }
 
-
+    public void addInContactsLast(String firstName, String lastName, String contactNumber,
+                                  String anotherContactNumber, String emailAddress) {
+        Person current = head;
+        Person previous = null;
+        Person newNode = new Person();
+    }
 }
