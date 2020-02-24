@@ -24,5 +24,26 @@ public class ContactList implements Serializable {
         newNode.setAnotherContactNumber(anotherContactNumber);
         newNode.setE_mailAddress(emailAddress);
 
+        if (isEmpty()) {
+            head = newNode;
+            contactListLength++;
+        } else {
+
+            /*
+             compare firstName of entries for priority by first letter in firstName
+             */
+            for (int i = 0; i < contactListLength; i++) {
+                String[] ourNames1 = current.getFirstName().split(" ");
+                String[] ourNames2 = newNode.getFirstName().split(" ");
+
+                int result = ourNames1[ourNames1.length - 1].compareToIgnoreCase(ourNames2[ourNames2.length - 1]);
+            }
+        }
+    }
+
+    public boolean isEmpty() {
+        return (contactListLength == 0);
     }
 }
+
+
